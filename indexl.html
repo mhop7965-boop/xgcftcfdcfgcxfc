@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PROTECT+ — Сонячна енергія під захистом</title>
+<style>
+:root{
+  color-scheme:dark;box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#120d09;--bg2:#1d130d;--card:#21160f;--bronze:#a9682d;
+  --gold:#f0b35a;--amber:#ffcb73;--cream:#f7ead7;--muted:#c8ad8e;
+  --line:rgba(240,179,90,.18);--shadow:0 25px 70px rgba(0,0,0,.42);
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--cream);background:radial-gradient(circle at 80% 0,#3b210f 0,transparent 28%),var(--bg);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.container{width:min(1180px,calc(100% - 32px));margin:auto}
+nav{position:fixed;z-index:50;top:calc(16px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);width:min(1120px,calc(100% - 24px));display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border:1px solid var(--line);border-radius:20px;background:rgba(24,16,11,.72);backdrop-filter:blur(18px)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.5px}.shield{width:34px;height:39px;background:linear-gradient(145deg,var(--amber),var(--bronze));clip-path:polygon(50% 0,94% 16%,88% 69%,50% 100%,12% 69%,6% 16%);display:grid;place-items:center;color:#1c1008;box-shadow:0 0 25px rgba(240,179,90,.4)}.navlinks{display:flex;gap:20px;color:var(--muted);font-size:14px}.navlinks a:hover{color:white}.navphone{padding:10px 15px;border-radius:12px;background:linear-gradient(135deg,var(--bronze),#75401c);font-weight:700}
+.hero{min-height:100vh;display:grid;align-items:center;position:relative;padding:130px 0 70px;overflow:hidden}
+.hero:before{content:"";position:absolute;width:720px;height:720px;right:-160px;top:-200px;border-radius:50%;background:radial-gradient(circle,#ffe3a6 0,#f2a942 8%,rgba(240,145,36,.22) 22%,transparent 62%);filter:blur(1px);animation:pulse 5s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.12);opacity:.78}}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;position:relative;z-index:2}.eyebrow{color:var(--amber);letter-spacing:2px;font-size:12px;text-transform:uppercase;font-weight:800}.hero h1{font-size:clamp(46px,7vw,88px);line-height:.94;margin:18px 0;letter-spacing:-4px}.hero h1 span{background:linear-gradient(90deg,#fff1d8,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{max-width:590px;color:var(--muted);font-size:18px;line-height:1.65}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{border:0;cursor:pointer;padding:16px 22px;border-radius:14px;font-weight:800;font-size:15px;transition:.25s;display:inline-block;font-family:inherit}.btn:hover{transform:translateY(-3px);box-shadow:0 16px 35px rgba(0,0,0,.3)}.primary{background:linear-gradient(135deg,var(--amber),var(--bronze));color:#1a0e06}.ghost{background:rgba(255,255,255,.04);border:1px solid var(--line);color:var(--cream)}
+.visual{position:relative;height:540px}.sun{position:absolute;width:180px;height:180px;right:70px;top:10px;border-radius:50%;background:radial-gradient(circle,#fff8d8 0 8%,#ffd56f 30%,#ec922b 68%,transparent 69%);box-shadow:0 0 80px #ec922b;animation:spinGlow 12s linear infinite}.sun:after{content:"";position:absolute;inset:-35px;border-radius:50%;background:repeating-conic-gradient(rgba(255,211,110,.6) 0 2deg,transparent 2deg 12deg);animation:spinGlow 18s linear infinite}@keyframes spinGlow{to{transform:rotate(360deg)}}
+.panel-wrap{position:absolute;bottom:20px;right:0;width:100%;height:340px;transform:perspective(900px) rotateX(58deg) rotateZ(-17deg)}.panel{position:absolute;width:92%;height:92%;right:0;bottom:0;border-radius:12px;background:repeating-linear-gradient(90deg,rgba(125,169,192,.28) 0 1px,transparent 1px 16.6%),repeating-linear-gradient(0deg,rgba(125,169,192,.22) 0 1px,transparent 1px 16.6%),linear-gradient(135deg,#080d11,#27343a 52%,#10161a);border:8px solid #0a0b0b;box-shadow:0 35px 60px rgba(0,0,0,.7),inset 0 0 45px rgba(112,184,224,.16);overflow:hidden}.panel:after{content:"";position:absolute;inset:-30%;background:linear-gradient(120deg,transparent 35%,rgba(255,218,148,.35) 48%,transparent 60%);animation:shine 5s ease-in-out infinite}@keyframes shine{0%,45%{transform:translateX(-60%)}100%{transform:translateX(80%)}}
+.stats{display:flex;gap:28px;margin-top:42px;flex-wrap:wrap}.stat b{display:block;font-size:22px;color:var(--amber)}.stat span{color:var(--muted);font-size:13px}
+section{padding:95px 0}.section-title{font-size:clamp(32px,4vw,52px);letter-spacing:-2px;margin:8px 0 14px}.lead{color:var(--muted);max-width:650px;line-height:1.65}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:35px}.card{background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));border:1px solid var(--line);padding:26px;border-radius:22px;box-shadow:var(--shadow);transition:.3s}.card:hover{transform:translateY(-8px);border-color:rgba(240,179,90,.45)}.tag{display:inline-block;padding:7px 10px;border-radius:999px;background:rgba(240,179,90,.1);color:var(--amber);font-size:12px;font-weight:800}.price{font-size:34px;font-weight:900;margin:18px 0 10px;color:#fff0d5}.card ul{padding-left:18px;color:var(--muted);line-height:2}
+.calculator{display:grid;grid-template-columns:1fr .9fr;gap:24px;margin-top:35px}.calc-box,.result{padding:30px;border-radius:25px;background:linear-gradient(145deg,#2a1a10,#160f0b);border:1px solid var(--line);box-shadow:var(--shadow)}label{display:block;color:var(--muted);font-size:13px;margin:18px 0 8px}input,select{width:100%;background:#100b08;color:white;border:1px solid rgba(255,255,255,.1);padding:15px;border-radius:12px;font-size:16px;outline:none;font-family:inherit}input:focus,select:focus,textarea:focus{border-color:var(--gold)}.result{background:radial-gradient(circle at 80% 0,rgba(240,179,90,.2),transparent 35%),#1d120c;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}.big{font-size:48px;font-weight:900;color:var(--amber);margin:10px 0}.breakdown{color:var(--muted);line-height:2;margin-bottom:18px}
+.benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:35px}.benefit{padding:24px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.025)}.icon{font-size:30px;margin-bottom:12px}.benefit p{color:var(--muted);font-size:14px;line-height:1.55}
+.consult{margin-top:45px;padding:35px;border-radius:26px;background:linear-gradient(135deg,#6e401d,#2b190e 60%,#130d09);border:1px solid rgba(255,211,140,.2);display:flex;align-items:center;justify-content:space-between;gap:25px}.consult h3{font-size:30px;margin:0 0 8px}.consult p{color:#e3c4a1}.mini-form{display:flex;gap:10px;min-width:min(100%,430px)}.mini-form input{min-width:240px}
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:25px}.contact-card,.form{padding:30px;border-radius:24px;border:1px solid var(--line);background:rgba(255,255,255,.035)}.phone{font-size:30px;color:var(--amber);font-weight:900;margin:14px 0;display:block}.form textarea{width:100%;min-height:110px;background:#100b08;color:white;border:1px solid rgba(255,255,255,.1);padding:15px;border-radius:12px;resize:vertical;font-family:inherit;font-size:16px;outline:none}.form .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.form button{width:100%;margin-top:16px}footer{padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.72);backdrop-filter:blur(8px);display:none;place-items:center;z-index:100}.modal.show{display:grid}.modal-card{width:min(460px,calc(100% - 30px));padding:35px;border-radius:26px;background:#21150e;border:1px solid var(--line);text-align:center;box-shadow:var(--shadow);animation:pop .35s ease}@keyframes pop{from{transform:scale(.85);opacity:0}to{transform:scale(1);opacity:1}}.check{width:68px;height:68px;margin:auto;border-radius:50%;display:grid;place-items:center;font-size:34px;background:linear-gradient(135deg,var(--amber),var(--bronze));color:#1a0d05}
+@media(max-width:850px){.navlinks{display:none}.navphone{display:none}.hero-grid,.calculator,.contact-grid{grid-template-columns:1fr}.visual{height:380px}.cards{grid-template-columns:1fr}.benefits{grid-template-columns:1fr 1fr}.consult{align-items:flex-start;flex-direction:column}.mini-form{width:100%;flex-direction:column}.mini-form input{min-width:0}.hero h1{letter-spacing:-2px}.form .row{grid-template-columns:1fr}}
+@media(max-width:520px){section{padding:70px 0}.benefits{grid-template-columns:1fr}.actions .btn{width:100%;text-align:center}.stats{gap:18px}.visual{height:300px}.panel-wrap{height:220px}.sun{width:125px;height:125px;right:30px}.big{font-size:38px}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="#home" class="brand"><span class="shield">+</span><span>PROTECT<span style="color:var(--amber)">+</span></span></a>
+  <div class="navlinks"><a href="#products">Рішення</a><a href="#calculator">Калькулятор</a><a href="#benefits">Переваги</a><a href="#contacts">Контакти</a></div>
+  <a class="navphone" href="tel:+380983466678">+380 98 346 66 78</a>
+</nav>
+
+<main>
+<section class="hero" id="home">
+<div class="container hero-grid">
+<div>
+<div class="eyebrow">⚡ Smart Solar Protection</div>
+<h1>Енергія сонця.<br><span>Захищена PROTECT+.</span></h1>
+<p>Преміальні сонячні рішення для дому та бізнесу. Проєктуємо, розраховуємо та встановлюємо системи, які працюють на вашу незалежність.</p>
+<div class="actions">
+<a class="btn primary" href="#calculator">Розрахувати вартість →</a>
+<a class="btn ghost" href="#consultation">Безплатна консультація</a>
+</div>
+<div class="stats"><div class="stat"><b>25+ років</b><span>ресурс панелей</span></div><div class="stat"><b>24/7</b><span>моніторинг системи</span></div><div class="stat"><b>PRO</b><span>монтаж і підтримка</span></div></div>
+</div>
+<div class="visual"><div class="sun"></div><div class="panel-wrap"><div class="panel"></div></div></div>
+</div>
+</section>
+
+<section id="products">
+<div class="container">
+<div class="eyebrow">Solar solutions</div><h2 class="section-title">Рішення для різних масштабів</h2><p class="lead">Від першої домашньої системи до потужної енергетичної інфраструктури для бізнесу.</p>
+<div class="cards">
+<div class="card"><span class="tag">START</span><h3>Базовий комплект для дому</h3><div class="price">від $3,200</div><ul><li>Система для базового споживання</li><li>Сучасні сонячні панелі</li><li>Інвертор + монтаж</li><li>Розрахунок під ваш об’єкт</li></ul><a href="#calculator" class="btn ghost">Розрахувати</a></div>
+<div class="card" style="border-color:rgba(240,179,90,.45)"><span class="tag">POPULAR</span><h3>Преміум станція з акумулятором</h3><div class="price">від $6,550</div><ul><li>Гібридна система</li><li>Акумулятор для резерву</li><li>Розумний моніторинг</li><li>Професійний монтаж</li></ul><a href="#calculator" class="btn primary">Обрати систему</a></div>
+<div class="card"><span class="tag">BUSINESS</span><h3>Індустріальне рішення</h3><div class="price">від $12,000</div><ul><li>Потужність під бізнес</li><li>Індивідуальний проєкт</li><li>Масштабована система</li><li>Повний супровід</li></ul><a href="#contacts" class="btn ghost">Отримати пропозицію</a></div>
+</div>
+</div>
+</section>
+
+<section id="calculator">
+<div class="container">
+<div class="eyebrow">Smart calculator</div><h2 class="section-title">Розрахуйте систему за кілька секунд</h2>
+<div class="calculator">
+<div class="calc-box">
+<label>Потужність системи: <b id="kwLabel">5 кВт</b></label>
+<input id="kw" type="range" min="1" max="30" value="5">
+<label>Кількість панелей</label><input id="panels" type="number" min="2" max="80" value="10">
+<label>Тип підключення</label>
+<select id="type"><option value="hybrid">Гібридний</option><option value="autonomous">Автономний</option></select>
+<label>Монтаж</label><select id="mount"><option value="standard">Стандартний монтаж</option><option value="complex">Складний монтаж</option></select>
+</div>
+<div class="result">
+<div class="eyebrow">Орієнтовна вартість</div><div class="big" id="total">$0</div>
+<div class="breakdown" id="breakdown"></div>
+<a href="#contacts" class="btn primary">Залишити заявку →</a>
+<small style="color:var(--muted);margin-top:14px">Фінальна ціна залежить від об’єкта та технічного рішення.</small>
+</div>
+</div>
+</div>
+</section>
+
+<section id="benefits">
+<div class="container">
+<div class="eyebrow">Why PROTECT+</div><h2 class="section-title">Чому обирають нас?</h2>
+<div class="benefits">
+<div class="benefit"><div class="icon">🛡️</div><h3>Надійність</h3><p>Продумуємо систему під реальні потреби та захищаємо інвестицію.</p></div>
+<div class="benefit"><div class="icon">☀️</div><h3>Ефективність</h3><p>Оптимальний підбір потужності, обладнання та конфігурації.</p></div>
+<div class="benefit"><div class="icon">⚙️</div><h3>Під ключ</h3><p>Від консультації та розрахунку до монтажу й запуску.</p></div>
+<div class="benefit"><div class="icon">📱</div><h3>Контроль</h3><p>Сучасний моніторинг роботи вашої енергосистеми.</p></div>
+</div>
+<div class="consult" id="consultation">
+<div><h3>Безплатна консультація</h3><p>Залиште номер — ми зв’яжемося з вами для попереднього розрахунку.</p></div>
+<form class="mini-form" onsubmit="quickConsult(event)"><input id="quickPhone" type="tel" placeholder="+380..." required><button class="btn primary">Передзвоніть мені</button></form>
+</div>
+</div>
+</section>
+
+<section id="contacts">
+<div class="container contact-grid">
+<div class="contact-card">
+<div class="eyebrow">Contact PROTECT+</div><h2 class="section-title">Готові перейти на сонячну енергію?</h2>
+<p class="lead">Залиште заявку — і ми підготуємо рішення саме під ваш будинок або бізнес.</p>
+<a class="phone" href="tel:+380983466678">+380 98 346 66 78</a>
+<p style="color:var(--muted)">Телефонуйте або залишайте заявку онлайн.</p>
+</div>
+<form class="form" id="orderForm">
+<div class="row"><div><label>Ваше ім’я</label><input id="name" required placeholder="Ім’я"></div><div><label>Телефон</label><input id="phone" type="tel" required placeholder="+380..."></div></div>
+<label>Місто / область</label><input id="city" placeholder="Наприклад, Львів">
+<label>Що вас цікавить?</label><textarea id="message" placeholder="Опишіть ваш об’єкт або потреби"></textarea>
+<button class="btn primary" type="submit">Замовити консультацію ⚡</button>
+</form>
+</div>
+</section>
+</main>
+
+<footer><div class="container">© 2026 <b>PROTECT+</b> — Сонячна енергія під захистом.</div></footer>
+
+<div class="modal" id="modal"><div class="modal-card"><div class="check">✓</div><h2>Заявку прийнято!</h2><p id="modalText" style="color:var(--muted);line-height:1.6">Дякуємо! Найближчим часом ми зв’яжемося з вами.</p><button class="btn primary" onclick="closeModal()">Чудово</button></div></div>
+
+<script>
+const $=id=>document.getElementById(id);
+function calculate(){
+ const kw=+$('kw').value, panels=Math.max(2,+$('panels').value||0);
+ const hybrid=$('type').value==='hybrid', complex=$('mount').value==='complex';
+ const panelCost=panels*185, powerCost=kw*410;
+ const inverter=hybrid?1650:2200, mount=Math.round((kw*220)*(complex?1.45:1));
+ const total=Math.round(panelCost+powerCost+inverter+mount);
+ $('kwLabel').textContent=kw+' кВт'; $('total').textContent='$'+total.toLocaleString('en-US');
+ $('breakdown').innerHTML='Панелі: <b>$'+panelCost.toLocaleString('en-US')+'</b><br>Обладнання: <b>$'+(powerCost+inverter).toLocaleString('en-US')+'</b><br>Монтаж: <b>$'+mount.toLocaleString('en-US')+'</b><br><br><span style="color:#f0b35a">Тип: '+(hybrid?'Гібридний':'Автономний')+'</span>';
+}
+['kw','panels','type','mount'].forEach(id=>$(id).addEventListener('input',calculate));calculate();
+function showModal(text){$('modalText').textContent=text;$('modal').classList.add('show')}
+function closeModal(){$('modal').classList.remove('show')}
+function quickConsult(e){e.preventDefault();const p=$('quickPhone').value;showModal('Дякуємо! Ми отримали ваш номер '+p+'. Це демо-версія сайту: для реальної відправки заявки можна підключити Telegram Bot API або серверний бекенд.');e.target.reset()}
+$('orderForm').addEventListener('submit',e=>{e.preventDefault();const name=$('name').value;showModal('Дякуємо, '+name+'! Вашу заявку успішно сформовано. У реальному запуску цей блок можна підключити до Telegram-бота, щоб власник миттєво отримував повідомлення про нову заявку.');e.target.reset()});
+$('modal').addEventListener('click',e=>{if(e.target===$('modal'))closeModal()});
+</script>
+</body>
+</html>
